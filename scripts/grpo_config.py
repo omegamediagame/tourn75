@@ -155,6 +155,9 @@ def get_run_cmd(config: dict, gpu_nums: int):
         "vllm_gpu_memory_utilization",
         "num_generations",
         "disable_fa",
+        "max_steps",
+        "warmup_steps",
+        "save_steps",
     ]
     for key in required_keys:
         if key not in config:
@@ -185,7 +188,9 @@ def get_run_cmd(config: dict, gpu_nums: int):
     --logging_steps 5 \
     --learning_rate {learning_rate} \
     --weight_decay 0. \
-    --warmup_steps 35 \
+    --max_steps {max_steps} \
+    --warmup_steps {warmup_steps} \
+    --save_steps {save_steps} \
     --lr_scheduler_type cosine_with_min_lr \
     --lr_scheduler_kwargs "{\\"min_lr_rate\\": {min_lr_rate}}" \
     --tf32 True \
@@ -309,7 +314,10 @@ def get_training_json(train_info: dict) -> dict:
         "num_generations": 2,
         "use_vllm": get_use_vllm(model_architecture, model_name),
         "tensor_parallel": config.get("tensor_parallel", False),
-        "use_4bit": config.get("use_4bit", False)
+        "use_4bit": config.get("use_4bit", False),
+        "max_steps": -1,
+        "warmup_steps": 35,
+        "save_steps": 200,
     }
     
     if model_name == "OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5":

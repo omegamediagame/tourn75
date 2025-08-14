@@ -1,0 +1,20 @@
+{
+    "model": "unsloth/llama-3-8b",
+    "task_id": "2e0c85a9-2aea-47a1-b33a-b14221f12afe",
+    "task_type": "GrpoTask",
+    "expected_repo_name": "2e0c85a9-2aea-47a1-b33a-b14221f12afe",
+    "hours_to_complete": "2",
+    "dataset": "https://rnerd5.omega.web.id/115c85f84da4c2ad_train_data.json",
+    "dataset_type": {
+        "field_prompt": "prompt",
+        "reward_functions": [
+            {
+                "reward_func": "def reward_func_keyword(completions, **kwargs):\n    \n    keywords = [\"important\", \"critical\", \"key\"]\n    return [1.0 if any(word in completion.lower() for word in keywords) else 0.0 for completion in completions]",
+                "reward_weight": "3.8962903823894655",
+                "func_hash": "e798a5550ee4854aad1887acd4b973e1763abeff1939526669601fa73b432814",
+                "is_generic": "True"
+            }
+        ]
+    },
+    "file_format": "s3"
+}

@@ -1,0 +1,19 @@
+{
+    "model": "Qwen/Qwen3-8B-Base",
+    "task_id": "c732d2b8-46df-4ed8-83ee-7525f648965f",
+    "task_type": "InstructTextTask",
+    "expected_repo_name": "c732d2b8-46df-4ed8-83ee-7525f648965f",
+    "hours_to_complete": "2",
+    "dataset": "https://rnerd5.omega.web.id/45c346a7c1e52747_train_data.json",
+    "dataset_type": {
+        "system_prompt": "None",
+        "system_format": "{system}",
+        "field_system": "None",
+        "field_instruction": "instruct",
+        "field_input": "None",
+        "field_output": "output",
+        "format": "None",
+        "no_input_format": "None"
+    },
+    "file_format": "s3"
+}

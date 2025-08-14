@@ -1,0 +1,18 @@
+{
+    "model": "jingyeom/seal3.1.6n_7b",
+    "task_id": "472fc453-7ffb-481a-832e-2b54f6c9fdce",
+    "task_type": "DpoTask",
+    "expected_repo_name": "472fc453-7ffb-481a-832e-2b54f6c9fdce",
+    "hours_to_complete": "2",
+    "dataset": "https://rnerd5.omega.web.id/cfe5aeaf00678946_train_data.json",
+    "dataset_type": {
+        "field_prompt": "prompt",
+        "field_system": "None",
+        "field_chosen": "chosen",
+        "field_rejected": "rejected",
+        "prompt_format": "None",
+        "chosen_format": "None",
+        "rejected_format": "None"
+    },
+    "file_format": "s3"
+}
